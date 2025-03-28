@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaPhone, FaMapMarkerAlt, FaInfoCircle } from "react-icons/fa";
 import logo from "./assets/pic.png";
-
+import addCart from "./assets/addcart.png";
 
 const App = () => {
   const [categories, setCategories] = useState([]);
@@ -12,23 +12,19 @@ const App = () => {
         const response = await fetch(
           "https://www.foodchow.com/api/FoodChowWD/GetRestaurantMenuWDWidget_multi?ShopId=3161&locale_id=null"
         );
-  
-        
-  
+
         const result = await response.json();
-  
+
         if (!result.data) {
           throw new Error("No data found!");
         }
-  
+
         const parsedData = JSON.parse(result.data);
 
-          const categoryList = parsedData.CategoryList || [];
-           console.log(categoryList)
-          setCategories(categoryList)
-        
-        
-             } catch (error) {
+        const categoryList = parsedData.CategoryList || [];
+        console.log(categoryList);
+        setCategories(categoryList);
+      } catch (error) {
         console.log(error.message);
       }
     };
@@ -75,16 +71,21 @@ const App = () => {
 
         {/* Menu Section */}
         <div className="menu-section">
-          <input type="text" className="search-bar" placeholder="Search for dishes" />
-          <h2 className="menu-title">Menu</h2>
-
+          <div className="menu-bar">
+            <input
+              type="text"
+              className="search-bar"
+              placeholder="Search for dishes"
+            />
+          </div>
           {categories.length > 0 ? (
             categories.map((category) => (
               <div key={category.CategryId}>
                 <h3 className="category-title">{category.CategryName}</h3>
 
                 {/* Check if category has food items */}
-                {category.ItemListWidget && category.ItemListWidget.length > 0 ? (
+                {category.ItemListWidget &&
+                category.ItemListWidget.length > 0 ? (
                   category.ItemListWidget.map((item) => (
                     <div key={item.ItemId} className="menu-item">
                       <div className="food-details">
@@ -93,19 +94,12 @@ const App = () => {
                           <p className="food-description">
                             {item.Description || "Delicious meal available!"}
                           </p>
-                          <img
-                            src={
-                              item.ItemImage
-                                ? `https://www.foodchow.com/UploadImages/RestaurantItemImages/${item.ItemImage}`
-                                : "https://via.placeholder.com/80"
-                            }
-                            alt={item.ItemName}
-                            className="food-image"
-                          />
                         </div>
                         <div className="food-bottom">
                           <span className="price">
-                            {item.Price ? `Rs.${item.Price}.00` : "Price varies"}
+                            {item.Price
+                              ? `Rs.${item.Price}.00`
+                              : "Price varies"}
                           </span>
                           <button className="add-button">ADD</button>
                         </div>
@@ -122,11 +116,11 @@ const App = () => {
           )}
         </div>
 
-        {/* Cart Section */}
+        {/* Cart Section  */}
         <aside className="cart-section">
-          <h2>Your Cart</h2>
+          <h2 style={{ color: "blue", fontSize: "18px" }}>Your Cart</h2>
           <div className="cart-empty">
-            <img src="https://via.placeholder.com/100" alt="Empty Cart" />
+            <img src={addCart} alt="Empty Cart" />
             <p>Your Cart Is Empty! Add Some Delicious Food Items.</p>
           </div>
         </aside>

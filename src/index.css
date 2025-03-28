@@ -96,7 +96,8 @@ body {
 
 /* Sidebar */
 .sidebar {
-  width: 250px;
+  width: 300px;
+  height: 430px;
   background-color: white;
   padding: 15px;
   border-radius: 10px;
@@ -132,7 +133,7 @@ body {
 }
 
 .search-bar {
-  width: 100%;
+  width: 97%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -173,9 +174,11 @@ body {
 
 /* Cart Section */
 .cart-section {
-  width: 250px;
+  width: 350px;
+  height: 400px;
   background-color: white;
-  padding: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 10px;
 }
 
@@ -185,7 +188,7 @@ body {
 }
 
 .cart-empty img {
-  width: 80px;
+  width: 200px;
   margin-bottom: 10px;
 }
 
