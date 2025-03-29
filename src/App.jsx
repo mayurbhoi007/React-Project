@@ -60,7 +60,7 @@ const App = () => {
         <div className="menu-buttons"></div>
       </header>
       <div className="heading-menus">
-        <button className="btn">Main menu</button>
+        <button className="btn1" >Main menu</button>
         <button className="btn">Breakfast</button>
         <button className="btn">Dinnermenu</button>
       </div>

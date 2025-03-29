@@ -111,6 +111,15 @@ body {
   color: #007bff;
   border-color: #007bff;
 }
+.btn1{
+  margin-top: 10px;
+  padding: 7px 10px;
+  color: #fff;
+  border-radius: 20px;
+  border-color: #007bff;
+
+  background: #007bff;
+}
 .btn:hover{
   background: #007bff;
   color: #fff;
