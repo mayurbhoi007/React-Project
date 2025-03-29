@@ -75,7 +75,7 @@ const App = () => {
             <input
               type="text"
               className="search-bar"
-              placeholder="Search for dishes"
+              placeholder="Search for dishes "
             />
           </div>
           {categories.length > 0 ? (

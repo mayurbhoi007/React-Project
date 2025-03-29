@@ -134,10 +134,11 @@ body {
 
 .search-bar {
   width: 97%;
-  padding: 10px;
-  border: 1px solid #ddd;
+  padding: 2% 10px;
+  border: 1px solid #0112ff;
   border-radius: 5px;
   margin-bottom: 15px;
+  
 }
 
 .menu-title {
