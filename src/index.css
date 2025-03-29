@@ -21,6 +21,9 @@ body {
   padding: 15px 20px;
   border-bottom: 2px solid #eaeaea;
 }
+.header-timing{
+  justify-items: center;
+}
 
 .logo-section {
   display: flex;
@@ -66,6 +69,10 @@ body {
   display: flex;
   gap: 10px;
 }
+.button:hover{
+  background: #007bff;
+  color: #fff;
+}
 
 .button, .phone-button {
   padding: 8px 12px;
@@ -80,14 +87,34 @@ body {
 .phone-button {
   display: flex;
   align-items: center;
-  background-color: #007bff;
-  color: white;
+  color: #007bff;
+  border-radius: 20px;
 }
+.phone-button:hover{
+  background: #007bff;
+  color: #fff;
+} 
 
 .phone-button .icon {
-  margin-right: 5px;
+  margin-right: #007bff;
 }
-
+.heading-menus{
+  display: flex;
+  gap: 10px;
+  margin-left: 400px
+}
+  
+.btn{
+  margin-top: 10px;
+  padding: 7px 10px;
+  border-radius: 20px;
+  color: #007bff;
+  border-color: #007bff;
+}
+.btn:hover{
+  background: #007bff;
+  color: #fff;
+}
 /* Main Content */
 .main-content {
   display: flex;
@@ -95,43 +122,71 @@ body {
 }
 
 /* Sidebar */
-.sidebar {
+.categories-container {
   width: 300px;
-  height: 430px;
-  background-color: white;
-  padding: 15px;
+  height: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.category-title {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 250px;  /* Fixed height */
+  overflow-y: auto;   /* Enable scrolling */
+}
+
+/* Optional: Style scrollbar */
+.category-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.category-list::-webkit-scrollbar-thumb {
+  background-color: #007bff;
   border-radius: 10px;
 }
 
-.sidebar-title {
-  font-size: 16px;
-  font-weight: bold;
-  color: #007bff;
+.category-item {
+  font-size: 14px;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s, color 0.3s;
 }
 
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  padding: 10px;
+/* Hover effect */
+.category-item:hover {
+  background: #007bff;
+  color: white;
   cursor: pointer;
 }
 
-.sidebar ul .active {
-  background-color: #007bff;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
+.category-item:last-child {
+  border-bottom: none;
 }
 
 /* Menu Section */
 .menu-section {
   flex-grow: 1;
   padding: 20px;
+  max-height: 530px;  /* Fixed height */
+  overflow-y: auto;   /* Enable scrolling */
+  
 }
-
+.menu-section::-webkit-scrollbar {
+  width: 6px;
+}
 .search-bar {
   width: 97%;
   padding: 2% 10px;

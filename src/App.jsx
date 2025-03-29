@@ -44,9 +44,11 @@ const App = () => {
             </p>
           </div>
         </div>
-        <div className="status">Restaurant Is Open</div>
-        <div className="timing">
-          Timing 07:00 AM - 11:00 PM <FaInfoCircle className="icon" />
+        <div className="header-timing">
+          <div className="status">Restaurant Is Open</div>
+          <div className="timing">
+            Timing 07:00 AM - 11:00 PM <FaInfoCircle className="icon" />
+          </div>
         </div>
         <div className="buttons">
           <button className="button">Choose Service</button>
@@ -55,19 +57,27 @@ const App = () => {
             <FaPhone className="icon" /> 7016997342
           </button>
         </div>
+        <div className="menu-buttons"></div>
       </header>
+      <div className="heading-menus">
+        <button className="btn">Main menu</button>
+        <button className="btn">Breakfast</button>
+        <button className="btn">Dinnermenu</button>
+      </div>
 
       {/* Main Section */}
       <div className="main-content">
         {/* Sidebar */}
-        <aside className="sidebar">
-          <h2 className="sidebar-title">CATEGORIES</h2>
-          <ul>
+        <div className="categories-container">
+          <h2 className="category-title">CATEGORIES</h2>
+          <ul className="category-list">
             {categories.map((category) => (
-              <li key={category.CategryId}>{category.CategryName}</li>
+              <li key={category.CategryId} className="category-item">
+                {category.CategryName}
+              </li>
             ))}
           </ul>
-        </aside>
+        </div>
 
         {/* Menu Section */}
         <div className="menu-section">
